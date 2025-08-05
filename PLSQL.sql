@@ -202,34 +202,25 @@ end;
 /
 
 
-DECLARE 
-NUM1 NUMBER:=&NUM1;
-NUM2 NUMBER:=&NUM2;
-OPER STRING:=&'OPER';
-ANS NUMBER;
-BEGIN
-  IF(OPER='+')THEN ANS:=NUM1+NUM2     DBMS_OUTPUT.PUT_LINE('SUN IS '|| ANS);
-  ELSIF(OPER='-') THEN ANS:=NUM1-NUM2  DBMS_OUTPUT.PUT_LINE('SUB IS '|| ANS);
-  ELSIF(OPER='*') THEN ANS:=NUM1*NUM2  DBMS_OUTPUT.PUT_LINE('MULT IS '|| ANS);
-  ELSIF(OPER='/') THEN ANS:=NUM1/NUM2  DBMS_OUTPUT.PUT_LINE('DIV IS '|| ANS);
-  ELSE
-    DBMS_OUTPUT.PUT_LINE('ENTER VALID DATA');
-  END IF;
-  END;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+declare
+   num1 number := &num1;
+   num2 number := &num2;
+   oper varchar2(1) := '&OPER';
+   ans  number;
+begin
+   if ( oper = '+' ) then
+      ans := num1 + num2;
+      dbms_output.put_line('SUM IS ' || ans);
+   elsif ( oper = '-' ) then
+      ans := num1 - num2;
+      dbms_output.put_line('SUB IS ' || ans);
+   elsif ( oper = '*' ) then
+      ans := num1 * num2;
+      dbms_output.put_line('MULT IS ' || ans);
+   elsif ( oper = '/' ) then
+      ans := num1 / num2;
+      dbms_output.put_line('DIV IS ' || ans);
+   else
+      dbms_output.put_line('ENTER VALID DATA');
+   end if;
+end;
