@@ -137,38 +137,8 @@ declare
    end loop;
    end;
 
---- 10 to 100 by simple loop
-declare
- n number :=100;
- i number :=1;
-begin
-  loop
-    dbms_output.put_line(i);
-    i:= i+1;
-  exit when i>n;
-  end loop;
-end;
 
----- while loop
- declare
-  n number :=100;
-  i number:=1;
- begin
 
-    while i<=n loop
-      dbms_output.put_line(i);
-      i:=i+1;
-   end loop;
- end;
----- for
-
-declare
-n number := 100;
-begin 
-  for i in 1..n loop
-    dbms_output.put_line(i);
-  end loop;
-end;
 
 
 
